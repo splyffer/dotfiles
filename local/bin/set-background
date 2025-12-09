@@ -1,0 +1,77 @@
+#!/usr/bin/env sh
+
+EXIT_CODE=0
+
+DESKTOP_FILE="$HOME/.config/background"
+OVERVIEW_FILE="$HOME/.config/background_overview"
+
+DO_DESKTOP_OVERVIEW=0
+
+TARGET=""
+
+check_exists() {
+  if [ ! -f $1 ]; then
+    echo "File $1 not exists"
+    exit 1
+  fi
+}
+
+apply_background() {
+  check_exists $1
+  case $2 in
+    $DESKTOP_FILE)
+      TARGET="desktop"
+      cp $1 "$DESKTOP_FILE"
+      swww img $DESKTOP_FILE
+      ;;
+    $OVERVIEW_FILE)
+      TARGET="overview"
+      cp $1 "$OVERVIEW_FILE"
+      swww img -n overview $OVERVIEW_FILE
+      ;;
+  esac
+  echo "applied background for: $TARGET" 
+}
+
+usage() {
+  echo "Syntax: set-background [command...]"
+  echo ""
+  echo "COMMANDS:"
+  echo "desktop, d        Set the background of desktop"
+  echo "overview, o        Set the background of overview"
+  exit "$1"
+}
+
+while true; do
+  if [ $# -eq 0 ]; then
+    break
+  fi
+
+  case "$1" in
+    desktop|d)
+      apply_background $2 $DESKTOP_FILE
+      if [ "$3" == "--overview" ]; then
+          DO_DESKTOP_OVERVIEW=1
+          if [ "$4" == "--blur" ]; then
+            magick $2 -scale 50% -blur 0x2.0 $OVERVIEW_FILE
+            swww img -n overview $OVERVIEW_FILE
+            shift 4
+          else
+            apply_background $2 $OVERVIEW_FILE
+            shift 3
+          fi
+      else
+        shift 2
+      fi
+      ;;
+    overview|o)
+      if [ $DO_DESKTOP_OVERVIEW -eq 1 ]; then
+        echo "set-background overview|o don't work if using --overview"
+        exit 1
+      fi
+      apply_background $2 $OVERVIEW_FILE
+      shift 2
+      ;;
+  esac
+
+done
