@@ -17,6 +17,7 @@
         "idle_inhibitor",
         "wireplumber",
         "network",
+        "bluetooth",
         "cpu",
         "memory",
         "backlight",
