@@ -1,3 +1,0 @@
-type = process
-command = /home/splyffer/.local/bin/wallpaperd
-depends-on = graphical.target
