@@ -38,8 +38,7 @@
     }
   },
   "niri/window": {
-    "max-length": 80,
-    "tooltip": false
+    "max-length": 80
   },
   "custom/layout": {
     "tooltip": false,
@@ -148,7 +147,8 @@
     "format-ethernet": "",
     "format-linked": "",
     "format-disconnected": "⚠",
-    "format-alt": "{ifname} {essid} ({signalStrength}%)"
+    "format-alt": "{ifname} {essid} ({signalStrength}%)",
+    "on-click-right": "exec kitty -e sh -c 'nmtui'"
   },
   "bluetooth": {
     "format": "",
@@ -200,8 +200,8 @@
     },
     "return-type": "json",
     "exec-if": "which mako",
-    "exec": "/home/splyffer/.config/waybar/scripts/mako-dnd",
-    "on-click": "/home/splyffer/.config/waybar/scripts/mako-dnd toggle",
+    "exec": "/home/carluad/.config/waybar/scripts/mako-dnd",
+    "on-click": "/home/carluad/.config/waybar/scripts/mako-dnd toggle",
     "signal": 6
   },
   "custom/sunset": {
@@ -214,8 +214,8 @@
       "off": "󰌶"
     },
     "exec": "latitude=51.6 longitude=7.4 /home/splyffer/.config/waybar/scripts/sunset.sh",
-    "on-click": "/home/splyffer/.config/waybar/scripts/sunset.sh toggle",
-    "exec-if": "/home/splyffer/.config/waybar/scripts/sunset.sh check",
+    "on-click": "/home/carluad/.config/waybar/scripts/sunset.sh toggle",
+    "exec-if": "/home/carluad/.config/waybar/scripts/sunset.sh check",
     "signal": 6
   },
 }

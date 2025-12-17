@@ -10,21 +10,12 @@
 
 window#waybar {
   color: rgba(53, 185, 171, 1);
-  background-color: rgba(23, 63, 79, 0.8);
+  background-color: rgba(13, 13, 13, 0.8);
   border-bottom: 2px solid rgba(53, 185, 171, 0.4);
 }
 
-window#waybar.solo {
-  color: rgba(53, 185, 171, 1);
-}
-
 #workspaces {
-  margin-right: 5px;
-}
-
-#custom-scratchpad {
-  margin-right: 5px;
-  padding: 0px 5px;
+  margin-right: 10px;
 }
 
 #workspaces button {
@@ -37,11 +28,15 @@ window#waybar.solo {
 }
 
 #workspaces button.visible {
-  color: rgba(115, 186, 37, 1);
+  color: rgba(33, 164, 223, 1);
 }
 
 #workspaces button.urgent {
-  color: rgba(33, 164, 223, 1);
+  color: rgba(183, 33, 23, 1);
+}
+
+#window {
+  font-weight: 500;
 }
 
 #mode,
@@ -57,8 +52,7 @@ window#waybar.solo {
 #backlight,
 #tray,
 #custom-sunset {
-  margin: 0px 6px 0px 10px;
-  /*    min-width: 30px;*/
+  margin: 0px 6px 0px 6px;
 }
 
 #clock {
