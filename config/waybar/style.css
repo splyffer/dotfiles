@@ -46,17 +46,20 @@ window#waybar {
 #network,
 #bluetooth,
 #pulseaudio,
-#idle_inhibitor,
 #temperature,
-#custom-zypper,
 #backlight,
-#tray,
+#tray {
+  margin: 0px 6px 0px;
+}
+
+#idle_inhibitor,
+#custom-zypper,
 #custom-sunset {
-  margin: 0px 6px 0px 6px;
+  margin: 0px 6px 0px;
 }
 
 #clock {
-  margin: 0px 6px 0px 10px;
+  margin: 0px 10px 0px 10px;
   font-weight: 600;
 }
 
