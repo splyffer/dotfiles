@@ -5,6 +5,11 @@ if status is-interactive
 
     alias t task
     alias db distrobox
+    alias dbe "distrobox enter"
+    alias dbc "distrobox create"
+    alias dbr "distrobox remove"
+    alias dbl "distrobox list"
+    alias dbs "distrobox stop"
     alias g git
     alias gs "git status"
     alias ga "git add"
