@@ -4,6 +4,14 @@ if status is-interactive
     set -U fish_greeting
 
     alias t task
+    alias db distrobox
+    alias g git
+    alias gs "git status"
+    alias ga "git add"
+    alias gc "git commit -m"
+    alias gca "git commit -am"
+    alias gps "git push"
+    alias gpl "git pull"
 
     starship init fish | source
     zoxide init fish | source
