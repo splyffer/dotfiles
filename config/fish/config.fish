@@ -17,6 +17,7 @@ if status is-interactive
     alias gca "git commit -am"
     alias gps "git push"
     alias gpl "git pull"
+    alias lg lazygit
 
     starship init fish | source
     zoxide init fish | source
