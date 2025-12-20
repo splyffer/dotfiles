@@ -7,6 +7,7 @@ screenshot-path "~/Imagens/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 cursor {
     xcursor-theme "Noir"
+    hide-when-typing
 }
 
 // Input
